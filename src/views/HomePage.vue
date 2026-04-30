@@ -3,7 +3,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="hero-title"><span class="title-bracket">⟨</span> 算法可视化 <span class="title-bracket">⟩</span></h1>
-        <p class="hero-subtitle">让抽象的代码变得直观易懂<br /><span class="hero-inspired">Inspired by 图码 & VisuAlgo</span></p>
+        <p class="hero-subtitle">算法可视化 — 让抽象的代码变得直观易懂 <span class="hero-inspired">Inspired by 图码 & VisuAlgo</span></p>
         <div class="hero-stats">
           <div class="stat"><span class="stat-number">{{ totalAlgorithms }}</span><span class="stat-label">算法</span></div>
           <div class="stat-divider" />
