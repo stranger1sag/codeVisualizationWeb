@@ -15,8 +15,10 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 const props = defineProps<{ variables: Record<string, number | string> }>()
-const variables = props.variables
+const variables = computed(() => props.variables)
 </script>
 
 <style scoped>
