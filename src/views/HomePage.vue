@@ -3,7 +3,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="hero-title"><span class="title-bracket">⟨</span> 算法可视化 <span class="title-bracket">⟩</span></h1>
-        <p class="hero-subtitle">让抽象的代码变得直观易懂<br /><span class="hero-inspired">Inspired by 图码 & VisuAlgo</span></p>
+        <p class="hero-subtitle">让抽象的代码变得直观易懂<br /><span class="hero-inspired">Inspired by <a href="https://www.totuma.cn" target="_blank">图码</a> & <a href="https://visualgo.net" target="_blank">VisuAlgo</a></span></p>
         <div class="hero-stats">
           <div class="stat"><span class="stat-number">{{ totalAlgorithms }}</span><span class="stat-label">算法</span></div>
           <div class="stat-divider" />
@@ -61,6 +61,8 @@ function navigateToAlgorithm(id: string) {
 .title-bracket { color: var(--accent-cyan); font-weight: 300; }
 .hero-subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 32px 0; }
 .hero-inspired { font-size: 14px; color: var(--text-muted); }
+.hero-inspired a { color: var(--accent-cyan); text-decoration: none; }
+.hero-inspired a:hover { text-decoration: underline; }
 .hero-stats { display: flex; align-items: center; gap: 24px; }
 .stat { text-align: center; }
 .stat-number { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--accent-cyan); }
