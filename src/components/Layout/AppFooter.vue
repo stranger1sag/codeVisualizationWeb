@@ -12,10 +12,10 @@
 
 <style scoped>
 .app-footer {
-  padding: 32px 24px;
+  padding: 24px 24px;
   text-align: center;
   border-top: 1px solid var(--border);
-  margin-top: 64px;
+  flex-shrink: 0;
 }
 
 .footer-inner p {

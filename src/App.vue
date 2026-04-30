@@ -27,6 +27,8 @@ import AppFooter from './components/Layout/AppFooter.vue'
 
 .app-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Page transition */
