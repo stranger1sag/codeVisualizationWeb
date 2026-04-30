@@ -29,6 +29,7 @@ import AppFooter from './components/Layout/AppFooter.vue'
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 /* Page transition */

@@ -212,7 +212,7 @@ function applyCustomInput() {
 </script>
 
 <style scoped>
-.algorithm-page { display: flex; flex-direction: column; height: 100vh; padding-top: var(--header-height); box-sizing: border-box; }
+.algorithm-page { display: flex; flex-direction: column; min-height: 100vh; padding-top: var(--header-height); box-sizing: border-box; }
 .page-header { background: var(--bg-secondary); border-bottom: 1px solid var(--border-light); padding: var(--space-md) var(--space-lg); }
 .page-header-inner { max-width: 1400px; margin: 0 auto; }
 .back-link { display: inline-flex; align-items: center; gap: var(--space-sm); font-size: 13px; color: var(--text-muted); margin-bottom: var(--space-sm); transition: color var(--transition-fast); }
