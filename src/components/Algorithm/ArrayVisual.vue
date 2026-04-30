@@ -95,7 +95,7 @@ const getColor = (index: number) => {
 .array-visual-container { display: flex; flex-direction: column; gap: 16px; }
 .count-array { margin-bottom: 8px; }
 .array-label { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
-.count-bars { display: flex; align-items: flex-end; gap: 4px; padding: 8px; background: var(--bg-tertiary); border-radius: 8px; overflow-x: auto; }
+.count-bars { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 4px; padding: 8px; background: var(--bg-tertiary); border-radius: 8px; max-width: 100%; }
 .count-bar-wrapper { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 24px; }
 .count-bar { width: 24px; background: #6366f1; border-radius: 3px; display: flex; align-items: flex-start; justify-content: center; transition: all 0.3s ease; }
 .count-bar.count-active { background: #f59e0b; box-shadow: 0 0 8px rgba(245, 158, 11, 0.5); }
