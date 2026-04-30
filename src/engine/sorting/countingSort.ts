@@ -26,14 +26,13 @@ export function countingSortRun(data: number[]): Step[] {
   const steps: Step[] = []
   const arr = [...data]
   const n = arr.length
-  const sortedIds: string[] = []
 
   // Find max value
   const max = Math.max(...arr)
   
   steps.push({
     line: 1,
-    data: { array: [...arr] },
+    data: { array: [...arr], count: new Array(max + 1).fill(0) },
     compareIds: [],
     swapIds: [],
     sortedIds: [],
@@ -46,7 +45,7 @@ export function countingSortRun(data: number[]): Step[] {
   
   steps.push({
     line: 3,
-    data: { array: [...arr] },
+    data: { array: [...arr], count: [...count] },
     compareIds: [],
     swapIds: [],
     sortedIds: [],
@@ -54,35 +53,61 @@ export function countingSortRun(data: number[]): Step[] {
     description: `创建计数数组, 大小 ${max + 1}`,
   })
 
-  // Count occurrences
+  // Count occurrences - highlight current element being counted
   for (let i = 0; i < n; i++) {
     count[arr[i]]++
     
     steps.push({
       line: 5,
       data: { array: [...arr], count: [...count] },
-      compareIds: [],
+      compareIds: [String(i)],  // Highlight current element being counted
       swapIds: [],
-      sortedIds: [...sortedIds],
-      variables: { i, val: arr[i], count: count[arr[i]] },
-      description: `计数 arr[${i}]=${arr[i]}, count[${arr[i]} = ${count[arr[i]]}`,
+      sortedIds: [],
+      variables: { i, val: arr[i], countVal: count[arr[i]] },
+      description: `统计元素 ${arr[i]} 的出现次数, count[${arr[i]}] = ${count[arr[i]]}`,
     })
   }
 
-  // Rebuild array from counts
+  // Show count array after counting
+  steps.push({
+    line: 5,
+    data: { array: [...arr], count: [...count], operation: 'counted' },
+    compareIds: [],
+    swapIds: [],
+    sortedIds: [],
+    variables: { count: count.join(', ') },
+    description: `计数完成, count数组: [${count.join(', ')}]`,
+  })
+
+  // Rebuild array from counts - highlight placement
   let index = 0
+  const sortedIds: string[] = []
+  
   for (let i = 0; i <= max; i++) {
+    // Show which count we're processing
+    steps.push({
+      line: 8,
+      data: { array: [...arr], count: [...count], operation: 'rebuild', rebuildVal: i, rebuildCount: count[i] },
+      compareIds: [],
+      swapIds: [],
+      sortedIds: [...sortedIds],
+      variables: { value: i, count: count[i] },
+      description: `处理数值 ${i}, 出现 ${count[i]} 次`,
+    })
+    
     while (count[i] > 0) {
+      const oldVal = arr[index]
       arr[index] = i
+      sortedIds.push(String(index))
       
       steps.push({
         line: 8,
-        data: { array: [...arr], count: [...count] },
+        data: { array: [...arr], count: [...count], operation: 'placing', placedIndex: index },
         compareIds: [],
         swapIds: [String(index)],
         sortedIds: [...sortedIds],
-        variables: { index, val: i },
-        description: `arr[${index}] = ${i}`,
+        variables: { index, oldVal, newVal: i },
+        description: `将 ${i} 放入 arr[${index}]`,
       })
       
       count[i]--
@@ -94,7 +119,7 @@ export function countingSortRun(data: number[]): Step[] {
   const allSortedIds = Array.from({ length: n }, (_, i) => String(i))
   steps.push({
     line: 12,
-    data: { array: [...arr] },
+    data: { array: [...arr], count: [...count], operation: 'done' },
     compareIds: [],
     swapIds: [],
     sortedIds: allSortedIds,
