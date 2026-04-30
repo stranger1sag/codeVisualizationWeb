@@ -156,11 +156,10 @@ watch(() => props.step, (newStep) => {
   background: var(--card-bg);
   border-radius: 12px;
   border: 1px solid var(--border);
-  overflow: hidden;
+  overflow: visible;
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 0;
 }
 .panel-header {
   display: flex;
@@ -186,8 +185,7 @@ watch(() => props.step, (newStep) => {
   align-items: flex-start;
   justify-content: center;
   padding: 24px;
-  min-height: 0;
-  overflow: auto;
+  overflow: visible;
 }
 .empty-state { color: var(--text-muted); font-size: 14px; }
 

@@ -225,9 +225,9 @@ function applyCustomInput() {
 .complexity-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
 .complexity-badge code { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--color-primary); }
 .page-content { flex: 1; display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-md) var(--space-lg); overflow: hidden; }
-.split-layout { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); overflow: hidden; min-height: 0; }
-.code-panel-wrapper { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
-.viz-panel-wrapper { display: flex; flex-direction: column; overflow: hidden; min-height: 0; }
-.variable-panel-wrapper { flex: 0 0 80px; overflow: hidden; }
+.split-layout { flex: 1; display: flex; gap: var(--space-md); min-height: 0; }
+.code-panel-wrapper { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.viz-panel-wrapper { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.variable-panel-wrapper { flex: 0 0 auto; }
 @media (max-width: 1024px) { .split-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; } .page-content { padding: var(--space-sm); } .page-header { padding: var(--space-sm) var(--space-md); } }
 </style>

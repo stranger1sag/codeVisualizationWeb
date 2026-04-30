@@ -56,7 +56,7 @@ watch(() => props.code, (c) => { codeLines.value = c.split('\n') }, { immediate:
   padding: 2px 8px;
   border-radius: 4px;
 }
-.code-body { flex: 1; overflow-y: auto; padding: 8px 0; }
+.code-body { flex: 1; overflow: visible; padding: 8px 0; }
 .code-content { margin: 0; padding: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; white-space: pre; }
 .code-line { display: block; padding: 1px 16px; transition: all 0.2s; }
 .code-line.active { background: rgba(6, 182, 212, 0.12); border-left: 3px solid var(--accent-cyan); padding-left: 13px; }
