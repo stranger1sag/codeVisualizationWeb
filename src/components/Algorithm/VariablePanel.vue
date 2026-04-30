@@ -20,10 +20,10 @@ const variables = props.variables
 </script>
 
 <style scoped>
-.variable-panel { background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.variable-panel { background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 12px; overflow: visible; }
 .panel-header { display: flex; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--border); }
 .panel-title { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; color: var(--text-primary); }
-.variables-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; }
+.variables-grid { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px; overflow: visible; }
 .variable-item { display: flex; align-items: center; gap: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 4px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--border); }
 .var-name { color: var(--accent-cyan); }
 .var-equals { color: var(--text-muted); }

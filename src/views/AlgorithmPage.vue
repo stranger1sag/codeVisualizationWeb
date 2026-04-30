@@ -224,7 +224,7 @@ function applyCustomInput() {
 .complexity-badge { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: var(--space-xs) var(--space-md); background: var(--bg-primary); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
 .complexity-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
 .complexity-badge code { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--color-primary); }
-.page-content { flex: 1; display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-md) var(--space-lg); overflow: hidden; }
+.page-content { flex: 1; display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-md) var(--space-lg); overflow: visible; }
 .split-layout { flex: 1; display: flex; gap: var(--space-md); min-height: 0; }
 .code-panel-wrapper { flex: 1; display: flex; flex-direction: column; min-height: 0; }
 .viz-panel-wrapper { flex: 1; display: flex; flex-direction: column; min-height: 0; }
