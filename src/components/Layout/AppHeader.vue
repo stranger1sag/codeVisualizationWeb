@@ -7,7 +7,7 @@
       </router-link>
       <nav class="nav-links">
         <router-link to="/" class="nav-link">首页</router-link>
-        <a href="https://github.com" target="_blank" class="nav-link">GitHub</a>
+        <a href="https://github.com/stranger1sag/codeVisualizationWeb" target="_blank" class="nav-link">GitHub</a>
       </nav>
     </div>
   </header>
