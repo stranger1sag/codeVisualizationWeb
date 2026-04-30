@@ -183,11 +183,11 @@ watch(() => props.step, (newStep) => {
 .visual-body {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
-  min-height: 300px;
-  overflow-x: auto;
+  min-height: 0;
+  overflow: auto;
 }
 .empty-state { color: var(--text-muted); font-size: 14px; }
 

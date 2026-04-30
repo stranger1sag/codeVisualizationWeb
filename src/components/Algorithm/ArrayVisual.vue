@@ -92,8 +92,8 @@ const getColor = (index: number) => {
 </script>
 
 <style scoped>
-.array-visual-container { display: flex; flex-direction: column; gap: 16px; }
-.count-array { margin-bottom: 8px; }
+.array-visual-container { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+.count-array { margin-bottom: 8px; width: 100%; }
 .array-label { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
 .count-bars { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 4px; padding: 8px; background: var(--bg-tertiary); border-radius: 8px; max-width: 100%; }
 .count-bar-wrapper { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 24px; }
@@ -101,7 +101,7 @@ const getColor = (index: number) => {
 .count-bar.count-active { background: #f59e0b; box-shadow: 0 0 8px rgba(245, 158, 11, 0.5); }
 .count-value { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: white; padding: 2px; }
 .count-index { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-muted); }
-.array-visual { display: flex; align-items: flex-end; gap: 8px; padding: 16px 0; }
+.array-visual { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px; padding: 16px 0; justify-content: center; width: 100%; }
 .array-bar-wrapper { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .array-bar { width: 36px; min-height: 20px; border-radius: 4px 4px 0 0; display: flex; align-items: flex-start; justify-content: center; padding-top: 4px; transition: background-color 0.2s ease; }
 .bar-value { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.3); }
