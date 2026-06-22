@@ -5,6 +5,16 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginPage.vue'),
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterPage.vue'),
+    },
+    {
       path: '/',
       name: 'home',
       component: HomePage,
@@ -28,6 +38,13 @@ const router = createRouter({
       props: true,
     },
   ],
+})
+
+router.beforeEach((to) => {
+  const user = localStorage.getItem('codeviz_user')
+  if (to.name !== 'login' && to.name !== 'register' && !user) {
+    return { name: 'login' }
+  }
 })
 
 export default router

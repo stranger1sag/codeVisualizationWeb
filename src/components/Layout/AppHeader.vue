@@ -8,12 +8,39 @@
       <nav class="nav-links">
         <router-link to="/" class="nav-link">首页</router-link>
         <a href="https://github.com/stranger1sag/codeVisualizationWeb" target="_blank" class="nav-link">GitHub</a>
+        <template v-if="user">
+          <span class="nav-user">{{ user.username }}</span>
+          <button class="nav-link logout-btn" @click="handleLogout">退出</button>
+        </template>
+        <router-link v-else to="/login" class="nav-link">登录</router-link>
       </nav>
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const user = ref(loadUser())
+
+watch(() => router.currentRoute.value, () => {
+  user.value = loadUser()
+})
+
+function loadUser() {
+  const raw = localStorage.getItem('codeviz_user')
+  if (!raw) return null
+  try { return JSON.parse(raw) } catch { return null }
+}
+
+function handleLogout() {
+  localStorage.removeItem('codeviz_user')
+  user.value = null
+  router.push('/login')
+}
 </script>
 
 <style scoped>
@@ -81,5 +108,26 @@
 
 .nav-link.router-link-active {
   color: var(--accent-cyan);
+}
+
+.nav-user {
+  font-size: 13px;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  padding: 4px 12px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-full);
+}
+
+.logout-btn {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.logout-btn:hover {
+  color: #ef4444;
 }
 </style>
